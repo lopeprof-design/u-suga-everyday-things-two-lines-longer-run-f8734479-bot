@@ -8,13 +8,12 @@
 
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const line1 =
-  "A queue is a caterpillar made of people: it only crawls forward when the person at the very front takes a step, and everyone else just follows the shoes in front of them.";
+const lines = [
+  "A queue is a caterpillar made of people: it only crawls forward when the person at the very front takes a step, and everyone else just follows the shoes in front of them.",
+  "The caterpillar fits because one slow head holds back the whole line, but it leaves out that people can chat, swap places, or walk away, and a caterpillar cannot.",
+];
 
-const line2 =
-  "The caterpillar fits because one slow head holds back the whole line, but it leaves out that people can chat, swap places, or walk away, and a caterpillar cannot.";
-
-const entry = `${line1}\n${line2}\n`;
+const entry = lines.join("\n") + "\n";
 
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", entry, "utf8");
